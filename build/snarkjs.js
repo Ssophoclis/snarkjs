@@ -7979,7 +7979,7 @@ var snarkjs = (function (exports) {
             const n = Math.min(totalBytes-i, MAX_BUFF_SIZE);
             const buff1 = await fd1.read(n);
             const buff2 = await fd2.read(n);
-            for (i=0; i<n; i++) if (buff1[i] != buff2[i]) return false;
+            for (let j=0; j<n; j++) if (buff1[j] != buff2[j]) return false;
         }
         await endReadSection(fd1);
         await endReadSection(fd2);
